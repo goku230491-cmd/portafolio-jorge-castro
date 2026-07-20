@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import "./globals.css";
+export const metadata:Metadata={title:"Jorge Castro | Data Analyst & Business Intelligence",description:"Portafolio profesional de Jorge Luis Castro Páez: Power BI, DAX, Python, SAP Business One, automatización y analítica para retail, eCommerce e infraestructura.",icons:{icon:"/favicon.svg"},openGraph:{title:"Jorge Castro | Data Analyst & Business Intelligence",description:"8+ años convirtiendo datos en decisiones con Power BI, Python, SAP y SQL.",images:[{url:"/og.png",width:1536,height:1024,alt:"Jorge Castro - Data Analyst, Business Intelligence y Automation"}]},twitter:{card:"summary_large_image",title:"Jorge Castro | Data Analyst & Business Intelligence",description:"Power BI · Python · SAP · SQL",images:["/og.png"]}};
+export default function RootLayout({children}:Readonly<{children:React.ReactNode}>){return <html lang="es"><body>{children}</body></html>}

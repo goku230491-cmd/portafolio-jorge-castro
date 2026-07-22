@@ -21,25 +21,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build portfolio
-        run: pnpm build
-
-      - name: Export static GitHub Pages site
-        run: node scripts/export-pages.mjs
+      - name: Prepare static portfolio
+        shell: bash
+        run: |
+          mkdir pages-dist
+          cp index.html pages-dist/index.html
+          cp -R public/. pages-dist/
+          touch pages-dist/.nojekyll
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

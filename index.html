@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jorge Castro | Analista de Datos & Business Intelligence</title>
+<meta name="description" content="Convierto los datos de tu empresa en decisiones claras. Power BI, Python, SAP y automatización. Toluca / Querétaro / Remoto.">
+<meta property="og:title" content="Jorge Castro | Data Analyst & Business Intelligence">
+<meta property="og:description" content="8+ años convirtiendo datos en decisiones con Power BI, Python, SAP y SQL.">
+<meta property="og:image" content="https://goku230491-cmd.github.io/portafolio-jorge-castro/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#0b1220;        /* fondo del héroe 3D */
+  --noche2:#101b33;
+  --fondo:#f6f7f4;        /* fondo claro del cuerpo */
+  --tarjeta:#ffffff;
+  --tinta:#141a22;
+  --gris:#5c6672;
+  --cobalto:#2f6bff;
+  --cobalto-osc:#1e49c7;
+  --ambar:#ffb020;
+  --cian:#31d6c5;
+  --linea:rgba(20,26,34,.1);
+  --sombra:0 18px 50px -20px rgba(16,27,51,.25);
+  --display:'Sora',sans-serif;
+  --texto:'Inter',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--texto);background:var(--fondo);color:var(--tinta);line-height:1.65;font-size:16.5px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:var(--ambar);color:var(--tinta)}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:1.2rem;
+  padding:.8rem 5%;background:rgba(11,18,32,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);color:#eef2f8}
+.logo{font-family:var(--display);font-weight:800;font-size:1.05rem;text-decoration:none;display:flex;align-items:center;gap:.55rem}
+.logo span{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,var(--cobalto),var(--cian));font-size:.8rem;color:#fff}
+.nav-links{display:flex;gap:1.4rem;margin-left:auto;font-size:.88rem;font-weight:500}
+.nav-links a{text-decoration:none;opacity:.85;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.lang{display:flex;border:1px solid rgba(255,255,255,.25);border-radius:99px;overflow:hidden;font-family:var(--mono);font-size:.72rem}
+.lang button{background:none;border:none;color:#eef2f8;padding:.4rem .75rem;cursor:pointer;opacity:.6}
+.lang button.active{background:var(--cobalto);opacity:1}
+.btn-cv{font-size:.82rem;font-weight:600;text-decoration:none;background:var(--ambar);color:var(--tinta);
+  padding:.5rem 1rem;border-radius:99px;transition:transform .15s}
+.btn-cv:hover{transform:translateY(-1px)}
+@media(max-width:900px){.nav-links{display:none}}
+
+/* ---------- HÉROE 3D ---------- */
+.hero{position:relative;min-height:100svh;background:var(--noche);color:#eef2f8;
+  display:flex;align-items:center;overflow:hidden}
+#lienzo3d{position:absolute;inset:0;width:100%;height:100%}
+.hero-velo{position:absolute;inset:0;background:
+  radial-gradient(ellipse 70% 60% at 30% 45%,rgba(11,18,32,.15) 0%,rgba(11,18,32,.78) 100%);pointer-events:none}
+.hero-int{position:relative;z-index:2;width:100%;padding:7.5rem 5% 5rem;display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:3rem;align-items:center;max-width:1280px;margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--cian);display:flex;align-items:center;gap:.7rem;margin-bottom:1.3rem}
+.eyebrow::before{content:'';width:26px;height:2px;background:var(--cian)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5.4vw,4.3rem);line-height:1.08;letter-spacing:-.02em}
+h1 .resalta{background:linear-gradient(120deg,var(--cian),var(--cobalto));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{margin-top:1.4rem;max-width:560px;font-size:1.08rem;color:#c4cdda;font-weight:400}
+.hero-ctas{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.9rem}
+.cta{font-family:var(--display);font-weight:600;font-size:.92rem;text-decoration:none;padding:.85rem 1.6rem;border-radius:12px;transition:transform .15s,box-shadow .2s}
+.cta.principal{background:var(--cobalto);color:#fff;box-shadow:0 12px 30px -10px rgba(47,107,255,.55)}
+.cta.principal:hover{transform:translateY(-2px)}
+.cta.wa{background:#1fbf63;color:#fff}
+.cta.wa:hover{transform:translateY(-2px)}
+.cta.fantasma{border:1px solid rgba(255,255,255,.3);color:#eef2f8}
+.cta.fantasma:hover{border-color:#fff}
+.hero-nota{margin-top:1.5rem;font-family:var(--mono);font-size:.74rem;color:#8fa0b5;display:flex;align-items:center;gap:.5rem}
+.punto{width:8px;height:8px;border-radius:50%;background:#38e07d;box-shadow:0 0 0 4px rgba(56,224,125,.18);animation:latido 2s infinite}
+@keyframes latido{50%{box-shadow:0 0 0 7px rgba(56,224,125,.06)}}
+.hero-foto{justify-self:center;text-align:center}
+.foto-marco{position:relative;width:min(240px,58vw);aspect-ratio:4/5;border-radius:26px;padding:6px;
+  background:linear-gradient(140deg,var(--cian),var(--cobalto) 55%,var(--ambar));
+  transform:perspective(900px) rotateY(-8deg) rotateX(3deg);box-shadow:0 30px 70px -25px rgba(0,0,0,.7);transition:transform .3s}
+.foto-marco:hover{transform:perspective(900px) rotateY(0) rotateX(0)}
+.foto-marco img{width:100%;height:100%;object-fit:cover;object-position:center 18%;border-radius:21px;background:#18233b}
+.foto-chip{margin-top:1rem;display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;
+  padding:.4rem .9rem;border-radius:99px;border:1px solid rgba(255,255,255,.25);color:#c4cdda}
+@media(max-width:900px){
+  .hero-int{grid-template-columns:1fr;padding-top:6.5rem;text-align:center}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-ctas,.eyebrow,.hero-nota{justify-content:center}
+  .hero-foto{order:-1}
+}
+
+/* ---------- SECCIONES ---------- */
+section{padding:5.5rem 5%}
+.int{max-width:1180px;margin:0 auto}
+.sec-eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cobalto);margin-bottom:.8rem}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-.02em;line-height:1.15}
+.sec-sub{margin-top:.9rem;color:var(--gris);max-width:640px;font-size:1.02rem}
+
+/* En pocas palabras */
+.simple-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+.simple-card{background:var(--tarjeta);border:1px solid var(--linea);border-radius:20px;padding:2rem 1.7rem;
+  box-shadow:var(--sombra);transition:transform .2s;transform-style:preserve-3d}
+.simple-icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;margin-bottom:1.2rem}
+.si-a{background:rgba(47,107,255,.12)}
+.si-b{background:rgba(255,176,32,.16)}
+.si-c{background:rgba(49,214,197,.14)}
+.simple-card h3{font-family:var(--display);font-weight:700;font-size:1.15rem;margin-bottom:.6rem}
+.simple-card p{font-size:.94rem;color:var(--gris)}
+.analogia{margin-top:1.1rem;padding:.8rem 1rem;border-radius:12px;background:var(--fondo);font-size:.85rem;
+  border-left:3px solid var(--ambar);color:var(--tinta)}
+.analogia b{font-weight:600}
+@media(max-width:900px){.simple-grid{grid-template-columns:1fr}}
+
+/* Números */
+.numeros{background:var(--noche);color:#eef2f8;padding:3.4rem 5%}
+.num-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.num-val{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,3.6vw,2.8rem);
+  background:linear-gradient(120deg,var(--cian),var(--cobalto));-webkit-background-clip:text;background-clip:text;color:transparent}
+.num-label{font-size:.82rem;color:#9db0c9;margin-top:.3rem}
+@media(max-width:760px){.num-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Proyectos */
+.proy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;margin-top:3rem}
+.proy{background:var(--tarjeta);border:1px solid var(--linea);border-radius:22px;padding:2rem;
+  box-shadow:var(--sombra);position:relative;transform-style:preserve-3d;transition:transform .18s ease,box-shadow .25s;will-change:transform}
+.proy:hover{box-shadow:0 28px 60px -22px rgba(16,27,51,.35)}
+.proy-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cobalto);margin-bottom:.7rem}
+.proy h3{font-family:var(--display);font-weight:700;font-size:1.28rem;letter-spacing:-.01em;margin-bottom:1.1rem}
+.paso{display:grid;grid-template-columns:88px 1fr;gap:.8rem;font-size:.92rem;padding:.45rem 0;align-items:start}
+.paso + .paso{border-top:1px dashed var(--linea)}
+.paso-k{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding-top:.25rem}
+.k-antes{color:#c0392b}.k-hice{color:var(--cobalto)}.k-ahora{color:#1e9e63}
+.paso-v{color:var(--gris)}
+.paso-v b{color:var(--tinta);font-weight:600}
+.resultado{margin-top:1.2rem;display:inline-block;font-family:var(--display);font-weight:700;font-size:1rem;
+  background:linear-gradient(120deg,rgba(49,214,197,.18),rgba(47,107,255,.14));padding:.55rem 1rem;border-radius:12px}
+.proy-tech{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.2rem}
+.tt{font-family:var(--mono);font-size:.66rem;padding:.25rem .6rem;border:1px solid var(--linea);border-radius:6px;color:var(--gris)}
+.ver-vivo{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.2rem;font-weight:600;font-size:.88rem;
+  color:var(--cobalto);text-decoration:none}
+.ver-vivo:hover{text-decoration:underline}
+@media(max-width:900px){.proy-grid{grid-template-columns:1fr}.paso{grid-template-columns:80px 1fr}}
+
+/* Trayectoria */
+.tray{position:relative;margin-top:3rem;padding-left:2rem}
+.tray::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(var(--cobalto),var(--cian))}
+.hito{position:relative;padding:0 0 2.1rem 1.4rem}
+.hito::before{content:'';position:absolute;left:-1.62rem;top:.35rem;width:14px;height:14px;border-radius:50%;
+  background:var(--fondo);border:3px solid var(--cobalto)}
+.hito.actual::before{background:var(--ambar);border-color:var(--ambar);box-shadow:0 0 0 5px rgba(255,176,32,.2)}
+.hito-fecha{font-family:var(--mono);font-size:.72rem;color:var(--gris);letter-spacing:.06em}
+.hito h3{font-family:var(--display);font-weight:700;font-size:1.08rem;margin:.2rem 0 .1rem}
+.hito-emp{font-weight:600;font-size:.88rem;color:var(--cobalto)}
+.hito p{font-size:.9rem;color:var(--gris);margin-top:.35rem;max-width:640px}
+
+/* Herramientas */
+.herr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:3rem}
+.herr{background:var(--tarjeta);border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.2rem;
+  display:flex;gap:.9rem;align-items:center;transition:transform .18s;transform-style:preserve-3d}
+.herr img{width:34px;height:34px;object-fit:contain}
+.herr-n{font-family:var(--display);font-weight:600;font-size:.9rem}
+.herr-d{font-size:.75rem;color:var(--gris)}
+@media(max-width:1000px){.herr-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.herr-grid{grid-template-columns:1fr}}
+
+/* Formación */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:3rem}
+.form-card{background:var(--tarjeta);border:1px solid var(--linea);border-radius:18px;padding:1.8rem;box-shadow:var(--sombra)}
+.form-card .sec-eyebrow{margin-bottom:.4rem}
+.form-card h3{font-family:var(--display);font-weight:700;font-size:1.12rem}
+.form-card p{font-size:.9rem;color:var(--gris);margin-top:.3rem}
+.certs{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.6rem}
+.cert{font-size:.8rem;background:var(--tarjeta);border:1px solid var(--linea);border-radius:99px;padding:.45rem 1rem;color:var(--gris)}
+@media(max-width:800px){.form-grid{grid-template-columns:1fr}}
+
+/* Contacto */
+.contacto{background:var(--noche);color:#eef2f8;position:relative;overflow:hidden}
+.contacto::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 55% at 75% 20%,rgba(47,107,255,.22),transparent 65%),
+  radial-gradient(ellipse 45% 45% at 15% 85%,rgba(49,214,197,.14),transparent 65%)}
+.contacto .int{position:relative}
+.contacto h2{color:#fff}
+.contacto .sec-sub{color:#9db0c9}
+.cont-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:3rem}
+.cont-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;
+  padding:1.5rem 1.3rem;text-decoration:none;transition:transform .18s,background .2s}
+.cont-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.09)}
+.cont-k{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cian)}
+.cont-v{font-weight:600;font-size:.92rem;margin-top:.5rem;word-break:break-word}
+@media(max-width:900px){.cont-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.cont-grid{grid-template-columns:1fr}}
+
+footer{background:var(--noche);color:#8fa0b5;padding:1.8rem 5%;border-top:1px solid rgba(255,255,255,.08);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.8rem}
+
+/* Reveals */
+.rev{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.rev.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rev{opacity:1;transform:none;transition:none}
+  *{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav>
+  <a class="logo" href="#inicio"><span>JC</span>Jorge Castro</a>
+  <div class="nav-links">
+    <a href="#simple" data-en="What I do">Qué hago</a>
+    <a href="#proyectos" data-en="Projects">Proyectos</a>
+    <a href="#trayectoria" data-en="Experience">Trayectoria</a>
+    <a href="#contacto" data-en="Contact">Contacto</a>
+  </div>
+  <div class="lang">
+    <button class="lang-btn active" data-lang="es">🇲🇽 ESP</button>
+    <button class="lang-btn" data-lang="en">🇺🇸 ENG</button>
+  </div>
+  <a class="btn-cv" href="https://goku230491-cmd.github.io/portafolio-jorge-castro/CV-Jorge-Castro.pdf" target="_blank" data-en="Download CV">Descargar CV</a>
+</nav>
+
+<!-- ================= HÉROE 3D ================= -->
+<header class="hero" id="inicio">
+  <canvas id="lienzo3d"></canvas>
+  <div class="hero-velo"></div>
+  <div class="hero-int">
+    <div>
+      <div class="eyebrow" data-en="Data Analyst · Business Intelligence · Automation">Analista de Datos · Business Intelligence · Automatización</div>
+      <h1 data-en="I turn your company's data into <span class='resalta'>clear decisions</span>.">Convierto los datos de tu empresa en <span class="resalta">decisiones claras</span>.</h1>
+      <p class="hero-sub" data-en="Every business generates thousands of numbers: sales, inventory, customers, shipments. My job is to organize all of that and turn it into visual panels and automatic reports, so anyone — not just technical people — can see what's working, what's failing, and what to do next.">Toda empresa genera miles de números: ventas, inventario, clientes, envíos. Mi trabajo es ordenar todo eso y convertirlo en tableros visuales y reportes automáticos, para que cualquier persona — no solo la gente técnica — vea qué funciona, qué falla y qué hacer después.</p>
+      <div class="hero-ctas">
+        <a class="cta principal" href="#proyectos" data-en="See my work ↓">Ver mi trabajo ↓</a>
+        <a class="cta wa" href="https://wa.me/527294930961" target="_blank" data-en="WhatsApp me">Escríbeme por WhatsApp</a>
+        <a class="cta fantasma" href="mailto:jorgeluis.23-91@hotmail.com">Email</a>
+      </div>
+      <div class="hero-nota"><span class="punto"></span><span data-en="Available · Toluca / Querétaro / Mexico / Remote">Disponible · Toluca / Querétaro / México / Remoto</span></div>
+    </div>
+    <div class="hero-foto">
+      <div class="foto-marco"><img src="https://goku230491-cmd.github.io/portafolio-jorge-castro/jorge-castro-clean.png" alt="Jorge Luis Castro Páez"></div>
+      <div class="foto-chip" data-en="8+ years of experience · MSc in progress">8+ años de experiencia · Maestría en curso</div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= EN POCAS PALABRAS ================= -->
+<section id="simple">
+  <div class="int">
+    <div class="sec-eyebrow" data-en="In plain words">En pocas palabras</div>
+    <h2 data-en="What I do, explained for everyone.">Lo que hago, explicado para todos.</h2>
+    <p class="sec-sub" data-en="No jargon. These are the three things I do every day and why they matter to a business.">Sin tecnicismos. Estas son las tres cosas que hago todos los días y por qué le sirven a un negocio.</p>
+
+    <div class="simple-grid">
+      <div class="simple-card rev tilt">
+        <div class="simple-icon si-a">📊</div>
+        <h3 data-en="I build control panels">Creo tableros de control</h3>
+        <p data-en="I take sales, inventory or customer data and turn it into interactive screens where directors see the whole business at a glance and make decisions in minutes.">Tomo los datos de ventas, inventario o clientes y los convierto en pantallas interactivas donde los directores ven todo el negocio de un vistazo y deciden en minutos.</p>
+        <div class="analogia" data-en="<b>Like the dashboard of a car:</b> you don't need to be a mechanic to know your speed, fuel level, and if something needs attention."><b>Como el tablero de un coche:</b> no necesitas ser mecánico para saber a qué velocidad vas, cuánta gasolina queda y si algo necesita atención.</div>
+      </div>
+      <div class="simple-card rev tilt">
+        <div class="simple-icon si-b">⚙️</div>
+        <h3 data-en="I automate repetitive work">Automatizo trabajo repetitivo</h3>
+        <p data-en="Reports that used to take days of copy-pasting in Excel now run on their own with programs I write. People stop wasting time and dedicate it to thinking.">Reportes que antes tomaban días de copiar y pegar en Excel, ahora se generan solos con programas que yo escribo. La gente deja de perder tiempo y lo dedica a pensar.</p>
+        <div class="analogia" data-en="<b>Like a dishwasher:</b> the dishes still get washed, but nobody spends their afternoon doing it by hand."><b>Como un lavavajillas:</b> los trastes se siguen lavando, pero ya nadie pierde la tarde haciéndolo a mano.</div>
+      </div>
+      <div class="simple-card rev tilt">
+        <div class="simple-icon si-c">✅</div>
+        <h3 data-en="I make sure the data is right">Cuido que los datos sean correctos</h3>
+        <p data-en="A wrong price or a missing photo in an online store costs sales. I build systems that review thousands of products and flag errors before customers see them.">Un precio mal puesto o una foto faltante en una tienda en línea cuesta ventas. Construyo sistemas que revisan miles de productos y avisan de los errores antes de que los vea un cliente.</p>
+        <div class="analogia" data-en="<b>Like quality control in a factory:</b> nothing leaves the door without being inspected first."><b>Como el control de calidad de una fábrica:</b> nada sale por la puerta sin ser revisado antes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NÚMEROS ================= -->
+<div class="numeros">
+  <div class="num-grid">
+    <div class="rev"><div class="num-val">8+</div><div class="num-label" data-en="years working with data">años trabajando con datos</div></div>
+    <div class="rev"><div class="num-val">70–80%</div><div class="num-label" data-en="less time spent on manual work">menos tiempo en trabajo manual</div></div>
+    <div class="rev"><div class="num-val">300+</div><div class="num-label" data-en="errors caught per month before customers see them">errores detectados al mes antes que los clientes</div></div>
+    <div class="rev"><div class="num-val">3 días → 4 h</div><div class="num-label" data-en="a whole process, automated (3 days → 4 h)">un proceso completo, automatizado</div></div>
+  </div>
+</div>
+
+<!-- ================= PROYECTOS ================= -->
+<section id="proyectos">
+  <div class="int">
+    <div class="sec-eyebrow" data-en="Portfolio">Portafolio</div>
+    <h2 data-en="Real projects, told simply.">Proyectos reales, contados en simple.</h2>
+    <p class="sec-sub" data-en="Each card tells the same story: what the problem was, what I did, and how things changed. Real cases from a major sportswear retailer in Mexico (anonymized data).">Cada tarjeta cuenta la misma historia: cuál era el problema, qué hice y cómo cambiaron las cosas. Casos reales de una importante marca deportiva en México (datos anonimizados).</p>
+
+    <div class="proy-grid">
+
+      <div class="proy rev tilt">
+        <div class="proy-tag" data-en="Sales dashboard">Tablero de ventas</div>
+        <h3 data-en="The weekly sales report, in 15 minutes">El reporte de ventas semanal, en 15 minutos</h3>
+        <div class="paso"><div class="paso-k k-antes" data-en="Before">Antes</div><div class="paso-v" data-en="The team spent <b>4 hours every week</b> assembling the sales report by hand in Excel.">El equipo pasaba <b>4 horas cada semana</b> armando a mano el reporte de ventas en Excel.</div></div>
+        <div class="paso"><div class="paso-k k-hice" data-en="What I did">Qué hice</div><div class="paso-v" data-en="I built an interactive panel showing sales, profit, inventory and customer behavior — updated automatically.">Construí un panel interactivo que muestra ventas, ganancia, inventario y comportamiento de clientes — actualizado automáticamente.</div></div>
+        <div class="paso"><div class="paso-k k-ahora" data-en="Now">Ahora</div><div class="paso-v" data-en="Directors open one screen and have all the answers.">Los directores abren una sola pantalla y tienen todas las respuestas.</div></div>
+        <div class="resultado" data-en="⏱ 4 hours → 15 minutes per week">⏱ 4 horas → 15 minutos por semana</div>
+        <div class="proy-tech"><span class="tt">Power BI</span><span class="tt">DAX</span><span class="tt">SAP</span></div>
+      </div>
+
+      <div class="proy rev tilt">
+        <div class="proy-tag" data-en="Data quality">Calidad de datos</div>
+        <h3 data-en="A traffic light that catches catalog errors">Un semáforo que detecta errores en el catálogo</h3>
+        <div class="paso"><div class="paso-k k-antes" data-en="Before">Antes</div><div class="paso-v" data-en="Products went to the online store with wrong or missing information, and nobody noticed until it was too late.">Los productos llegaban a la tienda en línea con información incorrecta o incompleta, y nadie lo notaba hasta que ya era tarde.</div></div>
+        <div class="paso"><div class="paso-k k-hice" data-en="What I did">Qué hice</div><div class="paso-v" data-en="I created a system that compares each product's data between systems and marks it <b>green, yellow or red</b>, like a traffic light.">Creé un sistema que compara los datos de cada producto entre sistemas y lo marca en <b>verde, amarillo o rojo</b>, como un semáforo.</div></div>
+        <div class="paso"><div class="paso-k k-ahora" data-en="Now">Ahora</div><div class="paso-v" data-en="Errors get fixed before publishing, not after a customer complains.">Los errores se corrigen antes de publicar, no después de la queja de un cliente.</div></div>
+        <div class="resultado" data-en="✅ 85% fewer catalog errors">✅ 85% menos errores en el catálogo</div>
+        <div class="proy-tech"><span class="tt">Power BI</span><span class="tt">DAX</span><span class="tt">SAP</span><span class="tt">PIM</span></div>
+      </div>
+
+      <div class="proy rev tilt">
+        <div class="proy-tag" data-en="Automation">Automatización</div>
+        <h3 data-en="From 3 days of capture to 4 hours">De 3 días de captura a 4 horas</h3>
+        <div class="paso"><div class="paso-k k-antes" data-en="Before">Antes</div><div class="paso-v" data-en="Uploading a new product catalog to the online store meant <b>3 days</b> of manual copying between systems.">Subir un catálogo nuevo de productos a la tienda en línea implicaba <b>3 días</b> de copiado manual entre sistemas.</div></div>
+        <div class="paso"><div class="paso-k k-hice" data-en="What I did">Qué hice</div><div class="paso-v" data-en="I wrote a program that takes the data from the company system, cleans it, organizes it, and prepares it ready to upload.">Escribí un programa que toma los datos del sistema de la empresa, los limpia, los ordena y los deja listos para subir.</div></div>
+        <div class="paso"><div class="paso-k k-ahora" data-en="Now">Ahora</div><div class="paso-v" data-en="The whole cycle runs in one morning, with no capture errors.">Todo el ciclo corre en una mañana, sin errores de captura.</div></div>
+        <div class="resultado" data-en="⚙️ 3 days → 4 hours per cycle">⚙️ 3 días → 4 horas por ciclo</div>
+        <div class="proy-tech"><span class="tt">Python</span><span class="tt">pandas</span><span class="tt">SAP</span></div>
+      </div>
+
+      <div class="proy rev tilt">
+        <div class="proy-tag" data-en="Artificial intelligence">Inteligencia artificial</div>
+        <h3 data-en="Product descriptions written by AI">Descripciones de producto escritas con IA</h3>
+        <div class="paso"><div class="paso-k k-antes" data-en="Before">Antes</div><div class="paso-v" data-en="Writing descriptions for an entire product season took <b>2 weeks</b> of copywriting.">Redactar las descripciones de una temporada completa de productos tomaba <b>2 semanas</b> de escritura.</div></div>
+        <div class="paso"><div class="paso-k k-hice" data-en="What I did">Qué hice</div><div class="paso-v" data-en="I connected the product data to an artificial intelligence that writes clear descriptions in Mexican Spanish, all with the same brand voice.">Conecté los datos de producto con una inteligencia artificial que escribe descripciones claras en español de México, todas con la misma voz de marca.</div></div>
+        <div class="paso"><div class="paso-k k-ahora" data-en="Now">Ahora</div><div class="paso-v" data-en="130+ products get their texts ready in a single run.">130+ productos reciben sus textos listos en una sola corrida.</div></div>
+        <div class="resultado" data-en="🤖 2 weeks → 4 hours">🤖 2 semanas → 4 horas</div>
+        <div class="proy-tech"><span class="tt">Claude API</span><span class="tt">Python</span></div>
+      </div>
+
+      <div class="proy rev tilt">
+        <div class="proy-tag" data-en="Online store inspector">Inspector de tienda en línea</div>
+        <h3 data-en="A robot that reviews the online store">Un robot que revisa la tienda en línea</h3>
+        <div class="paso"><div class="paso-k k-antes" data-en="Before">Antes</div><div class="paso-v" data-en="Nobody could review thousands of published products one by one: wrong prices and broken photos slipped through.">Nadie podía revisar uno por uno miles de productos publicados: se colaban precios mal puestos y fotos rotas.</div></div>
+        <div class="paso"><div class="paso-k k-hice" data-en="What I did">Qué hice</div><div class="paso-v" data-en="I programmed a robot that visits the online store, checks each product's images, prices and availability, and reports what's wrong.">Programé un robot que navega la tienda en línea, revisa imágenes, precios y disponibilidad de cada producto, y reporta lo que está mal.</div></div>
+        <div class="paso"><div class="paso-k k-ahora" data-en="Now">Ahora</div><div class="paso-v" data-en="Errors are found by the robot, not by customers.">Los errores los encuentra el robot, no los clientes.</div></div>
+        <div class="resultado" data-en="🔍 300+ errors caught monthly">🔍 300+ errores detectados al mes</div>
+        <div class="proy-tech"><span class="tt">Python</span><span class="tt">Selenium</span></div>
+      </div>
+
+      <div class="proy rev tilt">
+        <div class="proy-tag" data-en="Logistics · Live demo">Logística · Demo en vivo</div>
+        <h3 data-en="One single file for every shipment">Un solo expediente para cada envío</h3>
+        <div class="paso"><div class="paso-k k-antes" data-en="Before">Antes</div><div class="paso-v" data-en="Order, warehouse, carrier and refund info lived in different systems: tracking one shipment meant opening 4 screens.">La información de pedidos, almacén, paquetería y reembolsos vivía en sistemas distintos: rastrear un envío era abrir 4 pantallas.</div></div>
+        <div class="paso"><div class="paso-k k-hice" data-en="What I did">Qué hice</div><div class="paso-v" data-en="I built a web portal that unites everything: you search for an order and see its complete history in one place.">Construí un portal web que une todo: buscas una orden y ves su historia completa en un solo lugar.</div></div>
+        <div class="paso"><div class="paso-k k-ahora" data-en="Now">Ahora</div><div class="paso-v" data-en="Any question about a shipment is answered in seconds.">Cualquier duda sobre un envío se responde en segundos.</div></div>
+        <a class="ver-vivo" href="https://goku230491-cmd.github.io/CATALOGO-DE-RASTREO/" target="_blank" data-en="See it live ↗">Verlo en vivo ↗</a>
+        <div class="proy-tech"><span class="tt">HTML</span><span class="tt">JavaScript</span></div>
+      </div>
+
+      <div class="proy rev tilt">
+        <div class="proy-tag" data-en="eCommerce · Live demo">eCommerce · Demo en vivo</div>
+        <h3 data-en="Which products are missing photos?">¿A qué productos les faltan fotos?</h3>
+        <div class="paso"><div class="paso-k k-antes" data-en="Before">Antes</div><div class="paso-v" data-en="Knowing which products lacked images or inventory required crossing several files by hand.">Saber qué productos no tenían imágenes o inventario requería cruzar varios archivos a mano.</div></div>
+        <div class="paso"><div class="paso-k k-hice" data-en="What I did">Qué hice</div><div class="paso-v" data-en="I created a visual web app: you filter the catalog and instantly see what's complete and what's missing.">Creé una aplicación web visual: filtras el catálogo y ves al instante qué está completo y qué falta.</div></div>
+        <div class="paso"><div class="paso-k k-ahora" data-en="Now">Ahora</div><div class="paso-v" data-en="Catalog gaps become visible in seconds.">Los huecos del catálogo se ven en segundos.</div></div>
+        <a class="ver-vivo" href="https://goku230491-cmd.github.io/IMAGENES-ECOMM/" target="_blank" data-en="See it live ↗">Verlo en vivo ↗</a>
+        <div class="proy-tech"><span class="tt">HTML</span><span class="tt">JavaScript</span><span class="tt">PIM</span></div>
+      </div>
+
+      <div class="proy rev tilt">
+        <div class="proy-tag" data-en="Market research · Live demo">Investigación · Demo en vivo</div>
+        <h3 data-en="The competition, summarized on one screen">La competencia, resumida en una pantalla</h3>
+        <div class="paso"><div class="paso-k k-antes" data-en="Before">Antes</div><div class="paso-v" data-en="Market news and competitor moves were scattered across the internet, with no order.">Las noticias del mercado y los movimientos de la competencia estaban dispersos por internet, sin orden.</div></div>
+        <div class="paso"><div class="paso-k k-hice" data-en="What I did">Qué hice</div><div class="paso-v" data-en="I built an executive workspace with market indicators, competitor comparison, news timeline and sources.">Armé un espacio ejecutivo con indicadores de mercado, comparativa de competidores, cronología de noticias y fuentes.</div></div>
+        <div class="paso"><div class="paso-k k-ahora" data-en="Now">Ahora</div><div class="paso-v" data-en="Management reads one clear story instead of 50 loose links.">La dirección lee una historia clara en lugar de 50 ligas sueltas.</div></div>
+        <a class="ver-vivo" href="https://goku230491-cmd.github.io/reebok-mx-dashboard/#noticias" target="_blank" data-en="See it live ↗">Verlo en vivo ↗</a>
+        <div class="proy-tech"><span class="tt">Market Research</span><span class="tt">Storytelling</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRAYECTORIA ================= -->
+<section id="trayectoria" style="background:#eef0ec">
+  <div class="int">
+    <div class="sec-eyebrow" data-en="Experience">Trayectoria</div>
+    <h2 data-en="More than eight years understanding how businesses run.">Más de ocho años entendiendo cómo operan las empresas.</h2>
+
+    <div class="tray">
+      <div class="hito actual rev">
+        <div class="hito-fecha" data-en="2025 — Today">2025 — Actualidad</div>
+        <h3>Data Analyst &amp; AI-Driven BI</h3>
+        <div class="hito-emp">Reebok México</div>
+        <p data-en="I manage the panels and automations behind the online store: sales, inventory, catalog and AI applied to daily processes.">Manejo los tableros y automatizaciones detrás de la tienda en línea: ventas, inventario, catálogo e inteligencia artificial aplicada a los procesos diarios.</p>
+      </div>
+      <div class="hito rev">
+        <div class="hito-fecha">2024 — 2025</div>
+        <h3 data-en="Revenue Assurance Analyst">Analista de Aseguramiento de Ingresos</h3>
+        <div class="hito-emp">Total Play</div>
+        <p data-en="I compared money between systems to make sure not a single peso got lost along the way.">Comparaba el dinero entre sistemas para asegurar que ni un peso se perdiera en el camino.</p>
+      </div>
+      <div class="hito rev">
+        <div class="hito-fecha">2024</div>
+        <h3 data-en="Data Integration Analyst">Analista de Integración de Datos</h3>
+        <div class="hito-emp">Casanova Rent</div>
+        <p data-en="I cleaned and unified information from several systems into panels the operations team used daily.">Limpiaba y unificaba información de varios sistemas en tableros que el equipo de operación usaba a diario.</p>
+      </div>
+      <div class="hito rev">
+        <div class="hito-fecha">2021 — 2024</div>
+        <h3 data-en="Logistics Analyst">Analista de Logística</h3>
+        <div class="hito-emp">Estafeta Mexicana</div>
+        <p data-en="National shipping indicators, loss analysis and automated reports for a company that moves packages across the whole country.">Indicadores nacionales de envíos, análisis de mermas y reportes automáticos para una empresa que mueve paquetes por todo el país.</p>
+      </div>
+      <div class="hito rev">
+        <div class="hito-fecha">2020 — 2021</div>
+        <h3 data-en="Account Analyst">Analista de Cuentas</h3>
+        <div class="hito-emp">Intercon</div>
+        <p data-en="National dashboards for operations, staff and incidents.">Tableros nacionales de operación, personal e incidencias.</p>
+      </div>
+      <div class="hito rev">
+        <div class="hito-fecha">2018 — 2020</div>
+        <h3 data-en="Inventory Coordinator">Coordinador de Inventarios</h3>
+        <div class="hito-emp">La Tendence</div>
+        <p data-en="Inventory control and audits for 45 stores.">Control de inventarios y auditorías para 45 sucursales.</p>
+      </div>
+      <div class="hito rev">
+        <div class="hito-fecha">2015 — 2018</div>
+        <h3 data-en="Contract Risk Consultant">Consultor de Riesgo Contractual</h3>
+        <div class="hito-emp">Deloitte</div>
+        <p data-en="Audits in the automotive industry: physical inventories, commercial processes and documentation.">Auditorías en la industria automotriz: inventarios físicos, procesos comerciales y documentación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HERRAMIENTAS ================= -->
+<section id="herramientas">
+  <div class="int">
+    <div class="sec-eyebrow" data-en="My tools">Mis herramientas</div>
+    <h2 data-en="The technology behind the results.">La tecnología detrás de los resultados.</h2>
+    <p class="sec-sub" data-en="For those who want the technical detail: these are the tools I master and what I use each one for.">Para quien quiera el detalle técnico: estas son las herramientas que domino y para qué uso cada una.</p>
+    <div class="herr-grid">
+      <div class="herr rev"><img src="https://goku230491-cmd.github.io/portafolio-jorge-castro/logos/powerbi.svg" onerror="this.style.display='none'" alt="Power BI"><div><div class="herr-n">Power BI</div><div class="herr-d" data-en="interactive business panels">tableros interactivos de negocio</div></div></div>
+      <div class="herr rev"><img src="https://goku230491-cmd.github.io/portafolio-jorge-castro/logos/python.svg" onerror="this.style.display='none'" alt="Python"><div><div class="herr-n">Python</div><div class="herr-d" data-en="programs that automate work">programas que automatizan trabajo</div></div></div>
+      <div class="herr rev"><img src="https://goku230491-cmd.github.io/portafolio-jorge-castro/logos/sap.svg" onerror="this.style.display='none'" alt="SAP"><div><div class="herr-n">SAP Business One</div><div class="herr-d" data-en="the company's core system">el sistema central de la empresa</div></div></div>
+      <div class="herr rev"><img src="https://goku230491-cmd.github.io/portafolio-jorge-castro/logos/sql.svg" onerror="this.style.display='none'" alt="SQL"><div><div class="herr-n">SQL</div><div class="herr-d" data-en="the language for querying data">el idioma para consultar datos</div></div></div>
+      <div class="herr rev"><img src="https://goku230491-cmd.github.io/portafolio-jorge-castro/logos/excel.svg" onerror="this.style.display='none'" alt="Excel"><div><div class="herr-n">Excel avanzado</div><div class="herr-d" data-en="analysis and executive reports">análisis y reportes ejecutivos</div></div></div>
+      <div class="herr rev"><img src="https://goku230491-cmd.github.io/portafolio-jorge-castro/logos/tableau.svg" onerror="this.style.display='none'" alt="Tableau"><div><div class="herr-n">Tableau</div><div class="herr-d" data-en="data visualization">visualización de datos</div></div></div>
+      <div class="herr rev"><img src="https://goku230491-cmd.github.io/portafolio-jorge-castro/logos/selenium.svg" onerror="this.style.display='none'" alt="Selenium"><div><div class="herr-n">Selenium</div><div class="herr-d" data-en="robots that review websites">robots que revisan sitios web</div></div></div>
+      <div class="herr rev"><img src="https://goku230491-cmd.github.io/portafolio-jorge-castro/logos/claude.svg" onerror="this.style.display='none'" alt="Claude API"><div><div class="herr-n">Claude API (IA)</div><div class="herr-d" data-en="artificial intelligence in processes">inteligencia artificial en procesos</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORMACIÓN ================= -->
+<section id="formacion" style="padding-top:0">
+  <div class="int">
+    <div class="sec-eyebrow" data-en="Education">Formación</div>
+    <h2 data-en="Always learning.">En constante aprendizaje.</h2>
+    <div class="form-grid">
+      <div class="form-card rev">
+        <div class="sec-eyebrow" data-en="Master's degree">Maestría</div>
+        <h3 data-en="Data Science for Business">Ciencia de Datos para Negocios</h3>
+        <p data-en="UTEL · In progress · Expected completion: September 2026">UTEL · En curso · Finalización prevista: septiembre 2026</p>
+      </div>
+      <div class="form-card rev">
+        <div class="sec-eyebrow" data-en="Bachelor's degree">Licenciatura</div>
+        <h3 data-en="Business Administration">Administración</h3>
+        <p data-en="Universidad Autónoma del Estado de México · Degree awarded">Universidad Autónoma del Estado de México · Titulado</p>
+      </div>
+    </div>
+    <div class="certs rev">
+      <span class="cert" data-en="Python from Zero to Expert · 50 h · 2026">Python de Cero a Experto · 50 h · 2026</span>
+      <span class="cert">Power BI · Udemy</span>
+      <span class="cert">Tableau · Udemy</span>
+      <span class="cert">Qlik Sense · Udemy</span>
+      <span class="cert" data-en="Data Visualization · Tec de Monterrey">Visualización de Datos · Tec de Monterrey</span>
+      <span class="cert">SAP Business One</span>
+      <span class="cert" data-en="Data Science for Marketing · Anáhuac">Ciencia de Datos para Marketing · Anáhuac</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="contacto" id="contacto">
+  <div class="int">
+    <div class="sec-eyebrow" style="color:var(--cian)" data-en="Contact">Contacto</div>
+    <h2 data-en="Do you have messy data? Let's turn it into decisions.">¿Tienes datos desordenados? Convirtámoslos en decisiones.</h2>
+    <p class="sec-sub" data-en="Open to BI / Data Analyst roles, freelance projects and collaborations. I reply the same day.">Abierto a roles de BI / Data Analyst, proyectos freelance y colaboraciones. Respondo el mismo día.</p>
+    <div class="cont-grid">
+      <a class="cont-card" href="https://wa.me/527294930961" target="_blank"><div class="cont-k">WhatsApp</div><div class="cont-v">+52 729 493 0961</div></a>
+      <a class="cont-card" href="mailto:jorgeluis.23-91@hotmail.com"><div class="cont-k">Email</div><div class="cont-v">jorgeluis.23-91@hotmail.com</div></a>
+      <a class="cont-card" href="https://www.linkedin.com/in/jorge-luis-castro-p%C3%A1ez-6727173a9/" target="_blank"><div class="cont-k">LinkedIn</div><div class="cont-v">Jorge Luis Castro Páez</div></a>
+      <a class="cont-card" href="https://goku230491-cmd.github.io/portafolio-jorge-castro/CV-Jorge-Castro.pdf" target="_blank"><div class="cont-k">CV</div><div class="cont-v" data-en="Download PDF resume ↓">Descargar CV en PDF ↓</div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Jorge Luis Castro Páez</div>
+  <div data-en="Data Analyst · Business Intelligence · Toluca, Estado de México">Analista de Datos · Business Intelligence · Toluca, Estado de México</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ============ IDIOMA ESP / ENG ============ */
+(function(){
+  const botones=document.querySelectorAll('.lang-btn');
+  function setLang(l){
+    document.querySelectorAll('[data-en]').forEach(el=>{
+      if(!el.dataset.es) el.dataset.es=el.innerHTML;
+      el.innerHTML=(l==='en')?el.dataset.en:el.dataset.es;
+    });
+    document.documentElement.lang=l;
+    botones.forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+    try{localStorage.setItem('lang',l);}catch(e){}
+  }
+  botones.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+  let guardado='es';
+  try{guardado=localStorage.getItem('lang')||'es';}catch(e){}
+  if(guardado==='en') setLang('en');
+})();
+
+/* ============ REVELAR AL HACER SCROLL ============ */
+(function(){
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+})();
+
+/* ============ EFECTO 3D EN TARJETAS (tilt) ============ */
+(function(){
+  const reducido=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const puedeHover=window.matchMedia('(hover: hover)').matches;
+  if(reducido||!puedeHover) return;
+  document.querySelectorAll('.tilt').forEach(card=>{
+    card.addEventListener('pointermove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*7}deg) translateY(-3px)`;
+    });
+    card.addEventListener('pointerleave',()=>{card.style.transform='';});
+  });
+})();
+
+/* ============ ESCENA 3D DEL HÉROE (Three.js) ============ */
+(function(){
+  const canvas=document.getElementById('lienzo3d');
+  if(!canvas||typeof THREE==='undefined') return;
+  const reducido=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.6));
+
+  const scene=new THREE.Scene();
+  scene.fog=new THREE.Fog(0x0b1220,14,34);
+
+  const camera=new THREE.PerspectiveCamera(45,1,.1,100);
+  camera.position.set(0,6.5,14);
+  camera.lookAt(0,1.2,0);
+
+  /* luces */
+  scene.add(new THREE.AmbientLight(0x3a4a6b,.9));
+  const luz1=new THREE.DirectionalLight(0xffffff,.75); luz1.position.set(6,12,8); scene.add(luz1);
+  const luz2=new THREE.PointLight(0x31d6c5,1.1,30); luz2.position.set(-6,5,4); scene.add(luz2);
+  const luz3=new THREE.PointLight(0x2f6bff,1.0,30); luz3.position.set(7,4,-3); scene.add(luz3);
+
+  /* piso sutil tipo rejilla */
+  const grid=new THREE.GridHelper(60,60,0x1d2c4d,0x14203a);
+  grid.position.y=-0.01;
+  scene.add(grid);
+
+  /* barras de datos: ciudad de datos */
+  const COLS=17, FILAS=9, SEP=1.05;
+  const geo=new THREE.BoxGeometry(.62,1,.62);
+  geo.translate(0,.5,0); /* base en y=0 para escalar hacia arriba */
+  const barras=[];
+  const c1=new THREE.Color(0x2f6bff), c2=new THREE.Color(0x31d6c5), cAmbar=new THREE.Color(0xffb020);
+  for(let i=0;i<COLS;i++){
+    for(let j=0;j<FILAS;j++){
+      const t=(i/(COLS-1)+j/(FILAS-1))/2;
+      const esAmbar=Math.random()<.045;
+      const color=esAmbar?cAmbar.clone():c1.clone().lerp(c2,t);
+      const mat=new THREE.MeshStandardMaterial({
+        color, metalness:.35, roughness:.35,
+        emissive:color.clone().multiplyScalar(.28), transparent:true, opacity:.94
+      });
+      const m=new THREE.Mesh(geo,mat);
+      m.position.set((i-(COLS-1)/2)*SEP, 0, (j-(FILAS-1)/2)*SEP - 1.5);
+      m.userData={fase:Math.random()*Math.PI*2, vel:.55+Math.random()*.5, base:.35+Math.random()*1.1};
+      scene.add(m); barras.push(m);
+    }
+  }
+
+  /* partículas flotantes */
+  const pGeo=new THREE.BufferGeometry();
+  const N=260, pos=new Float32Array(N*3);
+  for(let i=0;i<N;i++){
+    pos[i*3]=(Math.random()-.5)*30;
+    pos[i*3+1]=Math.random()*10+1;
+    pos[i*3+2]=(Math.random()-.5)*24;
+  }
+  pGeo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  const pMat=new THREE.PointsMaterial({color:0x6fa8ff,size:.06,transparent:true,opacity:.7});
+  scene.add(new THREE.Points(pGeo,pMat));
+
+  /* mouse parallax */
+  let mx=0,my=0,tx=0,ty=0;
+  window.addEventListener('pointermove',e=>{
+    tx=(e.clientX/window.innerWidth-.5);
+    ty=(e.clientY/window.innerHeight-.5);
+  },{passive:true});
+
+  function resize(){
+    const w=canvas.clientWidth||canvas.parentElement.clientWidth;
+    const h=canvas.clientHeight||canvas.parentElement.clientHeight;
+    renderer.setSize(w,h,false);
+    camera.aspect=w/h; camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize',resize); resize();
+
+  const reloj=new THREE.Clock();
+  function frame(){
+    const t=reloj.getElapsedTime();
+    barras.forEach(b=>{
+      const u=b.userData;
+      const h=u.base + (Math.sin(t*u.vel+u.fase)+1)*1.15
+            + Math.sin(t*.4 + b.position.x*.45 + b.position.z*.3)*.5;
+      b.scale.y=Math.max(.15,h);
+    });
+    mx+=(tx-mx)*.04; my+=(ty-my)*.04;
+    camera.position.x=mx*2.4;
+    camera.position.y=6.5-my*1.4;
+    camera.lookAt(0,1.2,0);
+    scene.rotation.y=Math.sin(t*.05)*.08;
+    renderer.render(scene,camera);
+    if(!reducido) requestAnimationFrame(frame);
+  }
+  if(reducido){ barras.forEach(b=>{b.scale.y=b.userData.base+1;}); renderer.render(scene,camera); }
+  else frame();
+})();
+</script>
+</body>
+</html>

@@ -46,9 +46,18 @@ test("keeps the bilingual credential, styling, static page, and downloadable fil
   assert.match(staticPage, /Grade 98%/);
   assert.match(staticPage, /certificates\/Oracle-Dev-Gym-Databases-Foundations\.pdf/);
   assert.match(staticPage, /CV-Jorge-Castro\.pdf/);
+  assert.match(staticPage, /dashboards-ventas-ecommerce-retail\.png/);
+  assert.match(staticPage, /shipment-tracking-preview\.png/);
+  assert.doesNotMatch(staticPage, /CATALOGO-DE-RASTREO/);
+  assert.match(page, /shipment-tracking-preview\.png/);
+  assert.doesNotMatch(page, /CATALOGO-DE-RASTREO/);
+  assert.match(staticPage, /<canvas id="lienzo3d"><\/canvas>/);
+  assert.match(staticPage, /new THREE\.WebGLRenderer/);
 
   await Promise.all([
     access(new URL("../public/CV-Jorge-Castro.pdf", import.meta.url)),
+    access(new URL("../public/dashboards-ventas-ecommerce-retail.png", import.meta.url)),
+    access(new URL("../public/shipment-tracking-preview.png", import.meta.url)),
     access(
       new URL(
         "../public/certificates/Oracle-Dev-Gym-Databases-Foundations.pdf",

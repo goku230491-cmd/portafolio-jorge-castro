@@ -143,6 +143,15 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.4vw,2.5re
 .ver-vivo{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.2rem;font-weight:600;font-size:.88rem;
   color:var(--cobalto);text-decoration:none}
 .ver-vivo:hover{text-decoration:underline}
+.trabajo-visual{margin:2.2rem 0 0;background:var(--tarjeta);border:1px solid var(--linea);border-radius:22px;
+  overflow:hidden;box-shadow:var(--sombra)}
+.trabajo-visual img{display:block;width:100%;height:auto;background:#eef3f8}
+.trabajo-visual figcaption{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.2rem;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
+.proy-preview{margin:1.25rem 0 0;border:1px solid var(--linea);border-radius:14px;overflow:hidden;background:#eef3f8}
+.proy-preview img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center}
+.proy-preview figcaption{padding:.65rem .8rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--gris);background:var(--tarjeta)}
 @media(max-width:900px){.proy-grid{grid-template-columns:1fr}.paso{grid-template-columns:80px 1fr}}
 
 /* Trayectoria */
@@ -298,6 +307,11 @@ footer{background:var(--noche);color:#8fa0b5;padding:1.8rem 5%;border-top:1px so
     <h2 data-en="Real projects, told simply.">Proyectos reales, contados en simple.</h2>
     <p class="sec-sub" data-en="Each card tells the same story: what the problem was, what I did, and how things changed. Real cases from a major sportswear retailer in Mexico (anonymized data).">Cada tarjeta cuenta la misma historia: cuál era el problema, qué hice y cómo cambiaron las cosas. Casos reales de una importante marca deportiva en México (datos anonimizados).</p>
 
+    <figure class="trabajo-visual rev">
+      <img src="https://goku230491-cmd.github.io/portafolio-jorge-castro/dashboards-ventas-ecommerce-retail.png" alt="Dashboards de ventas eCommerce y retail desarrollados por Jorge Castro">
+      <figcaption><span data-en="Work sample · Sales analytics">Muestra de trabajo · Analítica de ventas</span><span>Power BI · eCommerce + Retail</span></figcaption>
+    </figure>
+
     <div class="proy-grid">
 
       <div class="proy rev tilt">
@@ -351,12 +365,15 @@ footer{background:var(--noche);color:#8fa0b5;padding:1.8rem 5%;border-top:1px so
       </div>
 
       <div class="proy rev tilt">
-        <div class="proy-tag" data-en="Logistics · Live demo">Logística · Demo en vivo</div>
+        <div class="proy-tag" data-en="Logistics · Static preview">Logística · Vista estática</div>
         <h3 data-en="One single file for every shipment">Un solo expediente para cada envío</h3>
         <div class="paso"><div class="paso-k k-antes" data-en="Before">Antes</div><div class="paso-v" data-en="Order, warehouse, carrier and refund info lived in different systems: tracking one shipment meant opening 4 screens.">La información de pedidos, almacén, paquetería y reembolsos vivía en sistemas distintos: rastrear un envío era abrir 4 pantallas.</div></div>
         <div class="paso"><div class="paso-k k-hice" data-en="What I did">Qué hice</div><div class="paso-v" data-en="I built a web portal that unites everything: you search for an order and see its complete history in one place.">Construí un portal web que une todo: buscas una orden y ves su historia completa en un solo lugar.</div></div>
         <div class="paso"><div class="paso-k k-ahora" data-en="Now">Ahora</div><div class="paso-v" data-en="Any question about a shipment is answered in seconds.">Cualquier duda sobre un envío se responde en segundos.</div></div>
-        <a class="ver-vivo" href="https://goku230491-cmd.github.io/CATALOGO-DE-RASTREO/" target="_blank" data-en="See it live ↗">Verlo en vivo ↗</a>
+        <figure class="proy-preview">
+          <img src="https://goku230491-cmd.github.io/portafolio-jorge-castro/shipment-tracking-preview.png" alt="Vista estática del panel de seguimiento de envíos">
+          <figcaption data-en="Static image · Report access disabled">Imagen estática · acceso al reporte deshabilitado</figcaption>
+        </figure>
         <div class="proy-tech"><span class="tt">HTML</span><span class="tt">JavaScript</span></div>
       </div>
 

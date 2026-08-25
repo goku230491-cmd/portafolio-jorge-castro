@@ -20,7 +20,7 @@ test("server-renders Jorge Castro's portfolio and new Oracle credential", async 
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Jorge Castro \| Data Analyst &amp; Business Intelligence<\/title>/i);
+  assert.match(html, /<title>Jorge Castro \| Business Intelligence y Automatización<\/title>/i);
   assert.match(html, /Datos que explican\./);
   assert.match(html, /Oracle Dev Gym/);
   assert.match(html, /Databases for Developers: Foundations/);

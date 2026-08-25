@@ -29,10 +29,11 @@ test("server-renders Jorge Castro's portfolio and new Oracle credential", async 
   assert.match(html, /\/CV-Jorge-Castro\.pdf/);
 });
 
-test("keeps the bilingual credential, styling, and downloadable files in sync", async () => {
-  const [page, css] = await Promise.all([
+test("keeps the bilingual credential, styling, static page, and downloadable files in sync", async () => {
+  const [page, css, staticPage] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../index.html", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /Calificación 98%/);
@@ -40,6 +41,11 @@ test("keeps the bilingual credential, styling, and downloadable files in sync", 
   assert.match(page, /Ver certificado/);
   assert.match(page, /View certificate/);
   assert.match(css, /\.cert-grid>div\.cert-featured/);
+  assert.match(staticPage, /Oracle Dev Gym · Databases for Developers: Foundations/);
+  assert.match(staticPage, /Calificación 98%/);
+  assert.match(staticPage, /Grade 98%/);
+  assert.match(staticPage, /certificates\/Oracle-Dev-Gym-Databases-Foundations\.pdf/);
+  assert.match(staticPage, /CV-Jorge-Castro\.pdf/);
 
   await Promise.all([
     access(new URL("../public/CV-Jorge-Castro.pdf", import.meta.url)),
